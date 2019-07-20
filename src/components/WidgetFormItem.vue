@@ -186,6 +186,18 @@
           <div style="height: 50px;color: #999;background: #eee;line-height:50px;text-align:center;">自定义区域</div>
         </template>
 
+        <!-- 自定义 -->
+        <template v-if="element.type == 'elTag'">
+          <el-tag :type="element.options.type"
+                  :closable="element.options.closable"
+                  :hit="element.options.hit"
+                  :color="element.options.color"
+                  :size="element.options.size"
+                  :effect="element.options.effect"
+                  :style="{'color':element.options.fontColor}"
+          >{{element.options.value}}</el-tag>
+        </template>
+
         <div class="widget-view-action" v-if="selectWidget.key == element.key">
           <i class="iconfont icon-icon_clone" @click.stop="handleWidgetClone(index)"></i>
           <i class="iconfont icon-trash" @click.stop="handleWidgetDelete(index)"></i>

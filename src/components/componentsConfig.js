@@ -1,5 +1,4 @@
-export const basicComponents = [
-  {
+export const basicComponents = [{
     type: 'input',
     name: '单行文本',
     icon: 'icon-input',
@@ -49,8 +48,7 @@ export const basicComponents = [
       inline: false,
       defaultValue: '',
       showLabel: false,
-      options: [
-        {
+      options: [{
           value: '选项1',
           label: '选项1'
         },
@@ -83,8 +81,7 @@ export const basicComponents = [
       inline: false,
       defaultValue: [],
       showLabel: false,
-      options: [
-        {
+      options: [{
           value: '选项1'
         },
         {
@@ -182,13 +179,12 @@ export const basicComponents = [
       required: false,
       showLabel: false,
       width: '',
-      options: [
-        {
+      options: [{
           value: '下拉框1'
         },
         {
           value: '下拉框2'
-        },{
+        }, {
           value: '下拉框3'
         }
       ],
@@ -230,8 +226,7 @@ export const basicComponents = [
   }
 ]
 
-export const advanceComponents = [
-  {
+export const advanceComponents = [{
     type: 'blank',
     name: '自定义',
     icon: 'icon-ic',
@@ -294,25 +289,39 @@ export const advanceComponents = [
   }
 ]
 
-export const layoutComponents = [
-  {
-    type: 'grid',
-    name: '栅格布局',
-    icon: 'icon-grid-',
-    columns: [
-      {
-        span: 12,
-        list: []
-      },
-      {
-        span: 12,
-        list: []
-      }
-    ],
-    options: {
-      gutter: 0,
-      justify: 'start',
-      align: 'top'
+export const layoutComponents = [{
+  type: 'grid',
+  name: '栅格布局',
+  icon: 'icon-grid-',
+  columns: [{
+      span: 12,
+      list: []
+    },
+    {
+      span: 12,
+      list: []
     }
+  ],
+  options: {
+    gutter: 0,
+    justify: 'start',
+    align: 'top'
   }
-]
+}]
+
+export const myComponents = [{
+  type: 'elTag',
+  name: '标签',
+  custom:true,
+  icon: 'el-icon-price-tag',
+  options: {
+    type:'',
+    effect:'light',
+    closable:false,
+    hit:false,
+    color:'',
+    size:'',
+    value:'标签',
+    fontColor:''
+  }
+}]

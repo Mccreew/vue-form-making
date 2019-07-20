@@ -35,6 +35,7 @@
                 </a>
               </li>
             </draggable>
+
             
             <div class="widget-cate">布局字段</div>
             <draggable tag="ul" :list="layoutComponents" 
@@ -47,6 +48,23 @@
               <li class="form-edit-widget-label data-grid" v-for="(item, index) in layoutComponents" :key="index">
                 <a>
                   <i class="icon iconfont" :class="item.icon"></i>
+                  <span>{{item.name}}</span>
+                </a>
+              </li>
+            </draggable>
+
+            
+            <div class="widget-cate">我的字段</div>
+            <draggable tag="ul" :list="myComponents" 
+              v-bind="{group:{ name:'people', pull:'clone',put:false},sort:false, ghostClass: 'ghost'}"
+              @end="handleMoveEnd"
+              @start="handleMoveStart"
+              :move="handleMove"
+            >
+              
+              <li class="form-edit-widget-label" v-for="(item, index) in myComponents" :key="index">
+                <a>
+                  <i :class="item.icon"></i>
                   <span>{{item.name}}</span>
                 </a>
               </li>
@@ -157,7 +175,7 @@ import WidgetForm from './WidgetForm'
 import CusDialog from './CusDialog'
 import GenerateForm from './GenerateForm'
 import Clipboard from 'clipboard'
-import {basicComponents, layoutComponents, advanceComponents} from './componentsConfig.js'
+import {basicComponents, layoutComponents, advanceComponents, myComponents} from './componentsConfig.js'
 import {loadJs, loadCss} from '../util/index.js'
 import request from '../util/request.js'
 import generateCode from './generateCode.js'
@@ -199,6 +217,7 @@ export default {
       basicComponents,
       layoutComponents,
       advanceComponents,
+      myComponents,
       resetJson: false,
       widgetForm: {
         list: [],
